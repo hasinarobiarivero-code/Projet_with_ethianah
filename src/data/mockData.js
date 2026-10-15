@@ -1,115 +1,155 @@
+// Données de transit et d'importation multi-sources (Alibaba, 1688, Amazon, AliExpress, etc.) vers Madagascar 🇲🇬
+
 export const initialOrders = [
   {
-    id: "GS-84291",
-    client: "Sofia Laurent",
-    email: "sofia.laurent@mail.fr",
-    channel: "Web",
-    channelColor: "bg-blue-600",
-    destination: "Paris, FR",
-    flag: "🇫🇷",
+    id: "CMD-MG-84291",
+    client: "Faly Rakotomalala",
+    email: "faly.rakoto@moov.mg",
+    phone: "+261 34 12 345 67",
+    channel: "1688 / Alibaba",
+    channelColor: "bg-orange-600",
+    originCountry: "Chine 🇨🇳",
+    originHub: "Hub Guangzhou",
+    destination: "Antananarivo (Analakely)",
+    city: "Antananarivo",
+    flag: "🇲🇬",
     total: 328.40,
+    totalMGA: "1 642 000 Ar",
     status: "Expédiée",
     statusVariant: "blue",
-    date: "13 Oct 2026, 09:15",
+    date: "14 Oct 2026, 09:15",
+    shippingMode: "Fret Aérien Express Chine",
+    hubArrival: "Ivato TNR",
     items: [
-      { name: "Montre Connectée Sport Pro", qty: 1, price: 249.00 },
-      { name: "Bracelet Cuir Véritable", qty: 1, price: 79.40 }
+      { name: "Lot Montres Connectées & Bracelets (1688)", qty: 5, price: 65.68 }
     ],
-    carrier: "Colissimo",
-    trackingNumber: "FR982347101"
+    carrier: "Air Cargo Guangzhou ➔ Ivato",
+    trackingNumber: "CAN-TNR-982347"
   },
   {
-    id: "GS-84290",
-    client: "Jonas Becker",
-    email: "j.becker@mail.de",
-    channel: "App",
-    channelColor: "bg-purple-600",
-    destination: "Berlin, DE",
-    flag: "🇩🇪",
+    id: "CMD-MG-84290",
+    client: "Haingo Razafindrabe",
+    email: "haingo.razafy@gmail.com",
+    phone: "+261 32 45 678 90",
+    channel: "Amazon FR",
+    channelColor: "bg-amber-500",
+    originCountry: "France 🇫🇷",
+    originHub: "Hub Paris CDG",
+    destination: "Antananarivo (Ankorondrano)",
+    city: "Antananarivo",
+    flag: "🇲🇬",
     total: 158.90,
+    totalMGA: "794 500 Ar",
     status: "Livrée",
     statusVariant: "green",
-    date: "13 Oct 2026, 08:42",
+    date: "14 Oct 2026, 08:42",
+    shippingMode: "Fret Aérien Express France",
+    hubArrival: "Agence Ankorondrano",
     items: [
-      { name: "Casque Audio Sans Fil ANC", qty: 1, price: 158.90 }
+      { name: "Casque Audio Sans Fil ANC (Amazon)", qty: 1, price: 158.90 }
     ],
-    carrier: "DHL Express",
-    trackingNumber: "DE449102834"
+    carrier: "Livraison Express Tana",
+    trackingNumber: "TNR-DLV-44910"
   },
   {
-    id: "GS-84289",
-    client: "Emma Wilson",
-    email: "emma.w@post.co.uk",
-    channel: "Amazon",
-    channelColor: "bg-amber-500",
-    destination: "Londres, GB",
-    flag: "🇬🇧",
+    id: "CMD-MG-84289",
+    client: "Mamy Andrianina",
+    email: "mamy.andrianina@wanadoo.mg",
+    phone: "+261 33 11 222 33",
+    channel: "Alibaba Grossiste",
+    channelColor: "bg-orange-500",
+    originCountry: "Chine 🇨🇳",
+    originHub: "Hub Yiwu / Ningbo",
+    destination: "Toamasina (Tamatave)",
+    city: "Toamasina",
+    flag: "🇲🇬",
     total: 764.20,
+    totalMGA: "3 821 000 Ar",
     status: "En transit",
     statusVariant: "orange",
-    date: "13 Oct 2026, 07:30",
+    date: "14 Oct 2026, 07:30",
+    shippingMode: "Fret Maritime Conteneur",
+    hubArrival: "Port de Toamasina (En mer)",
     items: [
-      { name: "Tablette Graphique Ultra 14\"", qty: 1, price: 699.00 },
-      { name: "Stylet Précision Stylus V3", qty: 1, price: 65.20 }
+      { name: "Matériel Informatique & Écrans Pro (Alibaba)", qty: 2, price: 382.10 }
     ],
-    carrier: "DHL Express",
-    trackingNumber: "GB778219401"
+    carrier: "Conteneur Maritime Chine ➔ Tamatave",
+    trackingNumber: "MGA-SEA-77821"
   },
   {
-    id: "GS-84288",
-    client: "Luca Romano",
-    email: "l.romano@post.it",
-    channel: "Web",
-    channelColor: "bg-blue-600",
-    destination: "Milan, IT",
-    flag: "🇮🇹",
+    id: "CMD-MG-84288",
+    client: "Tantely Rasoanaivo",
+    email: "tantely.rasoan@yahoo.fr",
+    phone: "+261 34 55 666 77",
+    channel: "AliExpress",
+    channelColor: "bg-red-500",
+    originCountry: "Chine 🇨🇳",
+    originHub: "Hub Shenzhen",
+    destination: "Antsirabe",
+    city: "Antsirabe",
+    flag: "🇲🇬",
     total: 99.00,
+    totalMGA: "495 000 Ar",
     status: "À préparer",
     statusVariant: "gray",
-    date: "13 Oct 2026, 06:55",
+    date: "14 Oct 2026, 06:55",
+    shippingMode: "Fret Aérien Standard",
+    hubArrival: "Entrepôt Shenzhen Relais",
     items: [
-      { name: "Support Ergonomique Aluminium", qty: 1, price: 99.00 }
+      { name: "Accessoires & Pièces Électroniques (AliExpress)", qty: 3, price: 33.00 }
     ],
-    carrier: "BRT Express",
-    trackingNumber: "IT332019482"
+    carrier: "Transit Hub Chine",
+    trackingNumber: "SZX-TNR-33201"
   },
   {
-    id: "GS-84287",
-    client: "Nour Al-Fassi",
-    email: "nour.alf@post.ae",
-    channel: "App",
-    channelColor: "bg-purple-600",
-    destination: "Dubaï, AE",
-    flag: "🇦🇪",
+    id: "CMD-MG-84287",
+    client: "Hery Rajaonarison",
+    email: "hery.rajaon@societe.mg",
+    phone: "+261 32 02 333 44",
+    channel: "Fournisseur Direct / US",
+    channelColor: "bg-indigo-600",
+    originCountry: "USA 🇺🇸",
+    originHub: "Hub Delaware",
+    destination: "Antananarivo (Ivato)",
+    city: "Antananarivo",
+    flag: "🇲🇬",
     total: 1245.00,
+    totalMGA: "6 225 000 Ar",
     status: "Contrôle",
     statusVariant: "pink",
-    date: "13 Oct 2026, 05:18",
+    date: "14 Oct 2026, 05:18",
+    shippingMode: "Fret Aérien Express USA",
+    hubArrival: "Douanes Ivato Aéroport",
     items: [
-      { name: "Station de Travail Thunderbolt 4", qty: 1, price: 1150.00 },
-      { name: "Câble Optique Pro 2m", qty: 1, price: 95.00 }
+      { name: "Équipement Réseau & Serveur Thunderbolt 4", qty: 1, price: 1245.00 }
     ],
-    carrier: "FedEx International",
-    trackingNumber: "AE994102938"
+    carrier: "Air Cargo Dédouanement Ivato",
+    trackingNumber: "DOUANE-TNR-9941"
   },
   {
-    id: "GS-84286",
-    client: "Clara Gómez",
-    email: "clara.g@post.es",
-    channel: "Web",
-    channelColor: "bg-blue-600",
-    destination: "Madrid, ES",
-    flag: "🇪🇸",
+    id: "CMD-MG-84286",
+    client: "Voahirana Randria",
+    email: "voahirana.r@moov.mg",
+    phone: "+261 33 88 999 00",
+    channel: "Shein / Mode",
+    channelColor: "bg-pink-600",
+    originCountry: "Chine / Europe",
+    originHub: "Hub Transit International",
+    destination: "Mahajanga (Majunga)",
+    city: "Mahajanga",
+    flag: "🇲🇬",
     total: 218.75,
+    totalMGA: "1 093 750 Ar",
     status: "Livrée",
     statusVariant: "green",
-    date: "13 Oct 2026, 04:40",
+    date: "14 Oct 2026, 04:40",
+    shippingMode: "Fret Maritime Groupage",
+    hubArrival: "Port de Toamasina ➔ Majunga",
     items: [
-      { name: "Clavier Mécanique Sans Fil RGB", qty: 1, price: 189.00 },
-      { name: "Repose-Poignet Mousse Mémoire", qty: 1, price: 29.75 }
+      { name: "Colis Vêtements & Chaussures (Shein)", qty: 1, price: 218.75 }
     ],
-    carrier: "Correos Express",
-    trackingNumber: "ES550183921"
+    carrier: "Fret Maritime Conteneur Toamasina",
+    trackingNumber: "MAR-TOA-55018"
   }
 ];
 
@@ -117,64 +157,346 @@ export const initialActivities = [
   {
     id: 1,
     type: "delivery",
-    title: "Commande GS-84290 livrée",
-    details: "Berlin • Il y a 4 min",
+    title: "Colis 1688 / Alibaba livré au client",
+    details: "Agence Analakely (Tana) • Il y a 4 min",
     iconBg: "bg-emerald-100 text-emerald-600",
     badge: null
   },
   {
     id: 2,
     type: "payment",
-    title: "Paiement de 1 340,00 € validé",
-    details: "Nour Al-Fassi • Il y a 12 min",
+    title: "Paiement MVola validé (1 642 000 Ar)",
+    details: "Faly Rakotomalala • Il y a 12 min",
     iconBg: "bg-purple-100 text-purple-600",
     badge: null
   },
   {
     id: 3,
     type: "alert",
-    title: "Contrôle douanier requis",
-    details: "Colis DHL-684201 • Il y a 25 min",
+    title: "Inspection douanière à l'aéroport d'Ivato",
+    details: "Colis #DOUANE-TNR-9941 • Il y a 25 min",
     iconBg: "bg-rose-100 text-rose-500",
     badge: "red"
   },
   {
     id: 4,
     type: "user",
-    title: "Nouveau client professionnel",
-    details: "Atelier Nante • Il y a 46 min",
+    title: "Nouveau client importateur 1688 & Amazon",
+    details: "Boutique Mahamasina • Il y a 46 min",
     iconBg: "bg-blue-100 text-blue-600",
     badge: null
   }
 ];
 
-export const salesChannels = [
-  { name: "Boutique web", percentage: 48, color: "#4f46e5", bgClass: "bg-indigo-600", amount: "136 700 €" },
-  { name: "Application", percentage: 28, color: "#06b6d4", bgClass: "bg-cyan-500", amount: "79 730 €" },
-  { name: "Marketplaces", percentage: 17, color: "#f59e0b", bgClass: "bg-amber-500", amount: "48 400 €" },
-  { name: "Partenaires", percentage: 8, color: "#10b981", bgClass: "bg-emerald-500", amount: "19 930 €" }
+export const initialShipments = [
+  {
+    id: "SH-MG-9041",
+    orderId: "CMD-MG-84289",
+    carrier: "Conteneur Maritime Asie ➔ Madagascar",
+    origin: "Port de Ningbo / Guangzhou (Chine 🇨🇳)",
+    destination: "Port de Toamasina (Tamatave 🇲🇬)",
+    status: "En transit",
+    statusColor: "amber",
+    eta: "Arrivée prévue dans 8 jours (SPAT)",
+    progress: 75,
+    currentLocation: "Navire en océan Indien vers Toamasina",
+    weight: "48.5 kg",
+    service: "Fret Maritime Groupage (Bateau)",
+    sourceMarket: "1688 / Alibaba (Chine)",
+    originHub: "Hub Chine"
+  },
+  {
+    id: "SH-MG-9040",
+    orderId: "CMD-MG-84291",
+    carrier: "Air Cargo International",
+    origin: "Hub Guangzhou Baiyun (Chine 🇨🇳)",
+    destination: "Antananarivo (Ivato TNR 🇲🇬)",
+    status: "Expédiée",
+    statusColor: "blue",
+    eta: "Aujourd'hui, 17:00",
+    progress: 85,
+    currentLocation: "Atterri à Ivato - En cours de tri",
+    weight: "3.2 kg",
+    service: "Fret Aérien Express Chine ➔ Mada",
+    sourceMarket: "1688",
+    originHub: "Hub Chine"
+  },
+  {
+    id: "SH-MG-9039",
+    orderId: "CMD-MG-84290",
+    carrier: "Air France Cargo",
+    origin: "Entrepôt Relais Paris CDG (France 🇫🇷)",
+    destination: "Agence Ankorondrano, Tana 🇲🇬",
+    status: "Livrée",
+    statusColor: "emerald",
+    eta: "Remis au destinataire",
+    progress: 100,
+    currentLocation: "Colis retiré en agence Tana",
+    weight: "1.1 kg",
+    service: "Fret Aérien Express France",
+    sourceMarket: "Amazon FR",
+    originHub: "Hub Europe"
+  },
+  {
+    id: "SH-MG-9038",
+    orderId: "CMD-MG-84287",
+    carrier: "Douanes Malagasy Ivato",
+    origin: "Hub Delaware (USA 🇺🇸)",
+    destination: "Antananarivo Ivato 🇲🇬",
+    status: "Contrôle",
+    statusColor: "rose",
+    eta: "En attente liquidation taxes",
+    progress: 60,
+    currentLocation: "Zone Fret Douanes Aéroport Ivato",
+    weight: "5.6 kg",
+    service: "Fret Aérien USA ➔ Madagascar",
+    sourceMarket: "Fournisseur US / Amazon",
+    originHub: "Hub USA"
+  },
+  {
+    id: "SH-MG-9037",
+    orderId: "CMD-MG-84286",
+    carrier: "MSC / CMA CGM Conteneur",
+    origin: "Hub Transit International",
+    destination: "Mahajanga via Toamasina 🇲🇬",
+    status: "Livrée",
+    statusColor: "emerald",
+    eta: "Livré en agence",
+    progress: 100,
+    currentLocation: "Remis en main propre au client",
+    weight: "14.2 kg",
+    service: "Fret Maritime Groupage",
+    sourceMarket: "Shein / Mode",
+    originHub: "Hub International"
+  }
+];
+
+export const initialClients = [
+  {
+    id: "CL-MG-001",
+    name: "Faly Rakotomalala",
+    email: "faly.rakoto@moov.mg",
+    phone: "+261 34 12 345 67",
+    city: "Antananarivo (Analakely)",
+    country: "Madagascar",
+    flag: "🇲🇬",
+    type: "Commerçant 1688 / Alibaba",
+    totalSpent: 1840.50,
+    totalSpentMGA: "9 202 500 Ar",
+    ordersCount: 6,
+    status: "Actif",
+    lastOrder: "14 Oct 2026"
+  },
+  {
+    id: "CL-MG-002",
+    name: "Haingo Razafindrabe",
+    email: "haingo.razafy@gmail.com",
+    phone: "+261 32 45 678 90",
+    city: "Antananarivo (Ankorondrano)",
+    country: "Madagascar",
+    flag: "🇲🇬",
+    type: "Particulier (Amazon FR)",
+    totalSpent: 920.00,
+    totalSpentMGA: "4 600 000 Ar",
+    ordersCount: 4,
+    status: "Actif",
+    lastOrder: "14 Oct 2026"
+  },
+  {
+    id: "CL-MG-003",
+    name: "Mamy Andrianina",
+    email: "mamy.andrianina@wanadoo.mg",
+    phone: "+261 33 11 222 33",
+    city: "Toamasina (Tamatave)",
+    country: "Madagascar",
+    flag: "🇲🇬",
+    type: "Grossiste Import Alibaba",
+    totalSpent: 4350.80,
+    totalSpentMGA: "21 754 000 Ar",
+    ordersCount: 12,
+    status: "VIP",
+    lastOrder: "14 Oct 2026"
+  },
+  {
+    id: "CL-MG-004",
+    name: "Tantely Rasoanaivo",
+    email: "tantely.rasoan@yahoo.fr",
+    phone: "+261 34 55 666 77",
+    city: "Antsirabe",
+    country: "Madagascar",
+    flag: "🇲🇬",
+    type: "Particulier (AliExpress)",
+    totalSpent: 540.20,
+    totalSpentMGA: "2 701 000 Ar",
+    ordersCount: 3,
+    status: "Actif",
+    lastOrder: "14 Oct 2026"
+  },
+  {
+    id: "CL-MG-005",
+    name: "Hery Rajaonarison",
+    email: "hery.rajaon@societe.mg",
+    phone: "+261 32 02 333 44",
+    city: "Antananarivo (Ivato)",
+    country: "Madagascar",
+    flag: "🇲🇬",
+    type: "Entreprise Import Pro",
+    totalSpent: 12890.00,
+    totalSpentMGA: "64 450 000 Ar",
+    ordersCount: 18,
+    status: "VIP",
+    lastOrder: "14 Oct 2026"
+  },
+  {
+    id: "CL-MG-006",
+    name: "Voahirana Randria",
+    email: "voahirana.r@moov.mg",
+    phone: "+261 33 88 999 00",
+    city: "Mahajanga (Majunga)",
+    country: "Madagascar",
+    flag: "🇲🇬",
+    type: "Boutique Mode (Shein / Chine)",
+    totalSpent: 680.15,
+    totalSpentMGA: "3 400 750 Ar",
+    ordersCount: 5,
+    status: "Actif",
+    lastOrder: "14 Oct 2026"
+  }
+];
+
+export const initialProducts = [
+  {
+    id: "PRD-INT-01",
+    name: "Lots Électronique & Montres (1688 / Chine)",
+    sku: "1688-WTC-01",
+    category: "Chine - 1688",
+    price: 249.00,
+    priceMGA: "1 245 000 Ar",
+    cost: 130.00,
+    stock: 45,
+    status: "En stock Tana",
+    sales: 230,
+    rating: 4.9
+  },
+  {
+    id: "PRD-INT-02",
+    name: "Casque Audio Sans Fil ANC (Amazon)",
+    sku: "AMZ-AUD-02",
+    category: "Europe - Amazon",
+    price: 158.90,
+    priceMGA: "794 500 Ar",
+    cost: 95.00,
+    stock: 18,
+    status: "En stock Tana",
+    sales: 210,
+    rating: 4.9
+  },
+  {
+    id: "PRD-INT-03",
+    name: "Matériel Informatique & Écrans (Alibaba)",
+    sku: "BABA-IT-14",
+    category: "Chine - Alibaba",
+    price: 699.00,
+    priceMGA: "3 495 000 Ar",
+    cost: 440.00,
+    stock: 8,
+    status: "Stock faible",
+    sales: 92,
+    rating: 4.8
+  },
+  {
+    id: "PRD-INT-04",
+    name: "Accessoires & Vêtements (Shein / AliExpress)",
+    sku: "SHN-MOD-AL",
+    category: "Mode & Beauté",
+    price: 99.00,
+    priceMGA: "495 000 Ar",
+    cost: 35.00,
+    stock: 60,
+    status: "En stock Tana",
+    sales: 410,
+    rating: 4.7
+  }
+];
+
+export const initialPayments = [
+  {
+    id: "PAY-MG-7821",
+    orderId: "CMD-MG-84291",
+    client: "Faly Rakotomalala",
+    amount: 328.40,
+    amountMGA: "1 642 000 Ar",
+    method: "MVola (Telma)",
+    date: "14 Oct 2026, 09:16",
+    status: "Validé",
+    fee: 3.25
+  },
+  {
+    id: "PAY-MG-7820",
+    orderId: "CMD-MG-84290",
+    client: "Haingo Razafindrabe",
+    amount: 158.90,
+    amountMGA: "794 500 Ar",
+    method: "Orange Money",
+    date: "14 Oct 2026, 08:43",
+    status: "Validé",
+    fee: 1.80
+  },
+  {
+    id: "PAY-MG-7819",
+    orderId: "CMD-MG-84289",
+    client: "Mamy Andrianina",
+    amount: 764.20,
+    amountMGA: "3 821 000 Ar",
+    method: "Airtel Money",
+    date: "14 Oct 2026, 07:31",
+    status: "Validé",
+    fee: 8.40
+  },
+  {
+    id: "PAY-MG-7818",
+    orderId: "CMD-MG-84288",
+    client: "Tantely Rasoanaivo",
+    amount: 99.00,
+    amountMGA: "495 000 Ar",
+    method: "Virement BNI Madagascar",
+    date: "14 Oct 2026, 06:56",
+    status: "Validé",
+    fee: 1.00
+  },
+  {
+    id: "PAY-MG-7817",
+    orderId: "CMD-MG-84287",
+    client: "Hery Rajaonarison",
+    amount: 1245.00,
+    amountMGA: "6 225 000 Ar",
+    method: "Virement BMOI Madagascar",
+    date: "14 Oct 2026, 05:19",
+    status: "En attente dédouanement",
+    fee: 0.00
+  }
 ];
 
 export const chartDatasets = {
   "7 jours": {
-    labels: ["25 sept.", "27 sept.", "29 sept.", "1 oct.", "Aujourd'hui"],
+    labels: ["8 oct.", "10 oct.", "12 oct.", "13 oct.", "Aujourd'hui"],
     points: [22, 38, 41, 55, 66.429],
     max: 80,
-    tooltipValue: "66 429 €",
+    tooltipValue: "66 429 € (~332 M Ar)",
     tooltipLabel: "Aujourd'hui"
   },
   "14 jours": {
-    labels: ["18 sept.", "22 sept.", "26 sept.", "30 sept.", "Aujourd'hui"],
+    labels: ["1 oct.", "5 oct.", "9 oct.", "12 oct.", "Aujourd'hui"],
     points: [30, 45, 52, 60, 71.200],
     max: 80,
-    tooltipValue: "71 200 €",
+    tooltipValue: "71 200 € (~356 M Ar)",
     tooltipLabel: "Aujourd'hui"
   },
   "30 jours": {
-    labels: ["13 sept.", "20 sept.", "27 sept.", "4 oct.", "Aujourd'hui"],
+    labels: ["15 sept.", "22 sept.", "29 sept.", "6 oct.", "Aujourd'hui"],
     points: [25, 48, 59, 64, 78.500],
     max: 80,
-    tooltipValue: "78 500 €",
+    tooltipValue: "78 500 € (~392 M Ar)",
     tooltipLabel: "Aujourd'hui"
   }
 };

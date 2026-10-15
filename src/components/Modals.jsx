@@ -3,17 +3,9 @@ import {
   X,
   Plus,
   Package,
-  User,
-  Mail,
-  MapPin,
-  DollarSign,
-  Truck,
   ScanLine,
-  CheckCircle,
-  FileText,
   Printer,
-  Search,
-  ExternalLink
+  Search
 } from 'lucide-react';
 
 /* --- MODAL CRÉER UNE COMMANDE --- */
@@ -21,12 +13,12 @@ export function CreateOrderModal({ isOpen, onClose, onAddOrder }) {
   const [formData, setFormData] = useState({
     client: '',
     email: '',
-    destination: 'Paris, FR',
-    flag: '🇫🇷',
-    channel: 'Web',
+    destination: 'Antananarivo (Analakely)',
+    flag: '🇲🇬',
+    channel: 'Amazon FR',
     total: '',
     status: 'À préparer',
-    carrier: 'DHL Express',
+    carrier: 'Fret Aérien Express (Paris ➔ Ivato)',
   });
 
   if (!isOpen) return null;
@@ -35,20 +27,22 @@ export function CreateOrderModal({ isOpen, onClose, onAddOrder }) {
     e.preventDefault();
     if (!formData.client || !formData.total) return;
 
+    const totalNum = parseFloat(formData.total);
     const newOrder = {
-      id: `GS-${Math.floor(84292 + Math.random() * 1000)}`,
+      id: `AMZ-MG-${Math.floor(84292 + Math.random() * 1000)}`,
       client: formData.client,
-      email: formData.email || `${formData.client.toLowerCase().replace(/\s+/g, '.')}@mail.com`,
+      email: formData.email || `${formData.client.toLowerCase().replace(/\s+/g, '.')}@gmail.com`,
       channel: formData.channel,
-      channelColor: formData.channel === 'App' ? 'bg-purple-600' : formData.channel === 'Amazon' ? 'bg-amber-500' : 'bg-blue-600',
+      channelColor: formData.channel === 'Amazon US' ? 'bg-indigo-600' : 'bg-amber-500',
       destination: formData.destination,
-      flag: formData.flag,
-      total: parseFloat(formData.total),
+      flag: '🇲🇬',
+      total: totalNum,
+      totalMGA: `${(totalNum * 5000).toLocaleString('fr-FR')} Ar`,
       status: formData.status,
       date: new Date().toLocaleString('fr-FR', { dateStyle: 'medium', timeStyle: 'short' }),
       carrier: formData.carrier,
-      trackingNumber: `TRK-${Math.floor(100000000 + Math.random() * 900000000)}`,
-      items: [{ name: 'Produit logistique premium', qty: 1, price: parseFloat(formData.total) }]
+      trackingNumber: `TNR-MG-${Math.floor(100000 + Math.random() * 900000)}`,
+      items: [{ name: `Article importé (${formData.channel})`, qty: 1, price: totalNum }]
     };
 
     onAddOrder(newOrder);
@@ -64,8 +58,8 @@ export function CreateOrderModal({ isOpen, onClose, onAddOrder }) {
               <Package className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-slate-800">Créer une nouvelle commande</h3>
-              <p className="text-xs text-slate-500">Ajout immédiat au registre d'expédition</p>
+              <h3 className="text-base font-bold text-slate-800">Enregistrer une commande Amazon ➔ Madagascar 🇲🇬</h3>
+              <p className="text-xs text-slate-500">Ajout immédiat au registre d'importation et de transit</p>
             </div>
           </div>
           <button onClick={onClose} className="p-1 rounded-lg text-slate-400 hover:bg-slate-100 cursor-pointer">
@@ -76,24 +70,24 @@ export function CreateOrderModal({ isOpen, onClose, onAddOrder }) {
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Nom du client</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Nom du client malgache</label>
               <input
                 type="text"
                 required
                 value={formData.client}
                 onChange={(e) => setFormData({ ...formData, client: e.target.value })}
-                placeholder="Ex: Camille Dubois"
+                placeholder="Ex: Faly Rabe"
                 className="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Email</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Email / Téléphone</label>
               <input
-                type="email"
+                type="text"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                placeholder="client@domaine.com"
+                placeholder="client@moov.mg ou +261 34..."
                 className="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
               />
             </div>
@@ -101,46 +95,44 @@ export function CreateOrderModal({ isOpen, onClose, onAddOrder }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Destination</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Destination Madagascar</label>
               <select
                 value={formData.destination}
-                onChange={(e) => {
-                  const flags = { 'Paris, FR': '🇫🇷', 'Berlin, DE': '🇩🇪', 'Londres, GB': '🇬🇧', 'Madrid, ES': '🇪🇸', 'Milan, IT': '🇮🇹', 'Dubaï, AE': '🇦🇪' };
-                  setFormData({ ...formData, destination: e.target.value, flag: flags[e.target.value] || '🌐' });
-                }}
+                onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
                 className="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 bg-white"
               >
-                <option value="Paris, FR">🇫🇷 Paris, FR</option>
-                <option value="Berlin, DE">🇩🇪 Berlin, DE</option>
-                <option value="Londres, GB">🇬🇧 Londres, GB</option>
-                <option value="Madrid, ES">🇪🇸 Madrid, ES</option>
-                <option value="Milan, IT">🇮🇹 Milan, IT</option>
-                <option value="Dubaï, AE">🇦🇪 Dubaï, AE</option>
+                <option value="Antananarivo (Analakely)">🇲🇬 Antananarivo (Analakely)</option>
+                <option value="Antananarivo (Ankorondrano)">🇲🇬 Antananarivo (Ankorondrano)</option>
+                <option value="Antananarivo (Ivato)">🇲🇬 Antananarivo (Ivato)</option>
+                <option value="Toamasina (Tamatave)">🇲🇬 Toamasina (Tamatave)</option>
+                <option value="Antsirabe">🇲🇬 Antsirabe</option>
+                <option value="Mahajanga (Majunga)">🇲🇬 Mahajanga (Majunga)</option>
               </select>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Canal</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Site d'achat source</label>
               <select
                 value={formData.channel}
                 onChange={(e) => setFormData({ ...formData, channel: e.target.value })}
                 className="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 bg-white"
               >
-                <option value="Web">Boutique Web</option>
-                <option value="App">Application Mobile</option>
-                <option value="Amazon">Amazon Marketplace</option>
+                <option value="Amazon FR">Amazon France</option>
+                <option value="Amazon US">Amazon USA</option>
+                <option value="AliExpress">AliExpress</option>
+                <option value="Boutique Directe">Autre site e-commerce</option>
               </select>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Total (€)</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Montant (€)</label>
               <input
                 type="number"
                 step="0.01"
                 required
                 value={formData.total}
                 onChange={(e) => setFormData({ ...formData, total: e.target.value })}
-                placeholder="249.50"
+                placeholder="150.00"
                 className="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
               />
             </div>
@@ -148,16 +140,15 @@ export function CreateOrderModal({ isOpen, onClose, onAddOrder }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Transporteur</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Mode de Fret & Transport</label>
               <select
                 value={formData.carrier}
                 onChange={(e) => setFormData({ ...formData, carrier: e.target.value })}
                 className="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 bg-white"
               >
-                <option value="DHL Express">DHL Express</option>
-                <option value="Colissimo">Colissimo</option>
-                <option value="FedEx">FedEx International</option>
-                <option value="UPS">UPS Worldwide</option>
+                <option value="Fret Aérien Express (Paris ➔ Ivato)">✈️ Fret Aérien Express (3-5 jours)</option>
+                <option value="Fret Maritime Groupage (Toamasina)">🚢 Fret Maritime Conteneur (3-4 sem)</option>
+                <option value="Livraison Locale Antananarivo">🛵 Livraison Locale Antananarivo</option>
               </select>
             </div>
 
@@ -168,11 +159,11 @@ export function CreateOrderModal({ isOpen, onClose, onAddOrder }) {
                 onChange={(e) => setFormData({ ...formData, status: e.target.value })}
                 className="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 bg-white"
               >
-                <option value="À préparer">À préparer</option>
-                <option value="En transit">En transit</option>
-                <option value="Expédiée">Expédiée</option>
-                <option value="Livrée">Livrée</option>
-                <option value="Contrôle">Contrôle</option>
+                <option value="À préparer">À préparer (En attente réception Paris)</option>
+                <option value="En transit">En transit (En vol / En mer vers Mada)</option>
+                <option value="Contrôle">Contrôle / Dédouanement Ivato</option>
+                <option value="Expédiée">Arrivé agence / En cours de livraison</option>
+                <option value="Livrée">Livrée au client</option>
               </select>
             </div>
           </div>

@@ -176,8 +176,13 @@ export default function RecentOrdersTable({
                 </td>
 
                 {/* Total */}
-                <td className="py-3 px-2 text-right font-bold text-slate-900">
-                  {order.total.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €
+                <td className="py-3 px-2 text-right">
+                  <div className="font-bold text-slate-900">
+                    {order.total.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €
+                  </div>
+                  {order.totalMGA && (
+                    <div className="text-[10px] text-emerald-700 font-semibold">{order.totalMGA}</div>
+                  )}
                 </td>
 
                 {/* Statut Badge */}

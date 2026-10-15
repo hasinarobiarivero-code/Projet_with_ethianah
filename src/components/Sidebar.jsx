@@ -7,7 +7,7 @@ import {
   Box,
   CreditCard,
   BarChart3,
-  Blocks,
+  MessageSquare,
   Settings,
   Rocket,
   LogOut,
@@ -35,7 +35,7 @@ export default function Sidebar({
   ];
 
   const systemNavItems = [
-    { id: 'integrations', label: "Intégrations", icon: Blocks, count: null },
+    { id: 'comments', label: "Commentaires", icon: MessageSquare, count: null },
     { id: 'settings', label: "Paramètres", icon: Settings, count: null },
   ];
 
@@ -156,9 +156,9 @@ export default function Sidebar({
               </div>
               <span className="text-base font-bold text-white tracking-tight">99,2%</span>
             </div>
-            <div className="text-xs font-semibold text-white/95">Réseau opérationnel</div>
+            <div className="text-xs font-semibold text-white/95">Transit Mondial ➔ Mada</div>
             <div className="text-[11px] text-emerald-200/70 mt-0.5 leading-tight">
-              42 packages actifs dans 18 pays
+              Chine, Europe & USA (42 colis actifs)
             </div>
           </div>
 

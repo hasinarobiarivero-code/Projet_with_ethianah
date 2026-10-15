@@ -16,17 +16,19 @@ export default function Header({
   currentCountry,
   setCurrentCountry,
   notificationsCount = 3,
-  onOpenHelp
+  onOpenHelp,
+  adminProfile,
+  onNavigateToProfile,
+  onNavigateToSecurity
 }) {
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const countries = [
-    { code: 'FR', name: 'France', currency: 'EUR', flag: '🇫🇷' },
-    { code: 'US', name: 'United States', currency: 'USD', flag: '🇺🇸' },
-    { code: 'GB', name: 'United Kingdom', currency: 'GBP', flag: '🇬🇧' },
-    { code: 'DE', name: 'Germany', currency: 'EUR', flag: '🇩🇪' },
+    { code: 'MG', name: 'Madagascar', currency: 'MGA', flag: '🇲🇬' },
+    { code: 'FR', name: 'France (Hub Transit)', currency: 'EUR', flag: '🇫🇷' },
+    { code: 'US', name: 'Amazon USA', currency: 'USD', flag: '🇺🇸' },
   ];
 
   return (
@@ -47,7 +49,7 @@ export default function Header({
         >
           <Search className="w-4 h-4 mr-2.5 text-slate-400 group-hover:text-slate-600" />
           <span className="flex-1 text-slate-500 font-normal truncate">
-            Rechercher une commande, un client, un colis...
+            Rechercher un colis, client, plateforme (1688, Alibaba, Amazon, Shein...)...
           </span>
           <div className="flex items-center gap-0.5 px-2 py-0.5 text-[11px] font-semibold text-slate-500 bg-white border border-slate-200 rounded-md shadow-2xs">
             <span>⌘</span>
@@ -134,8 +136,8 @@ export default function Header({
                 <div className="p-2 rounded-lg bg-amber-50/70 border border-amber-100 flex items-start gap-2">
                   <AlertCircle className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
                   <div>
-                    <p className="font-semibold text-amber-950">Contrôle douanier en cours</p>
-                    <p className="text-[11px] text-amber-700">DHL-684201 - Hub Leipzig</p>
+                    <p className="font-semibold text-amber-950">Dédouanement en cours</p>
+                    <p className="text-[11px] text-amber-700">Hub Aéroport Ivato TNR</p>
                   </div>
                 </div>
               </div>
@@ -149,30 +151,36 @@ export default function Header({
             onClick={() => setIsProfileOpen(!isProfileOpen)}
             className="flex items-center gap-2 pl-1 pr-2.5 py-1 rounded-full border border-slate-200 bg-white hover:bg-slate-50 cursor-pointer transition-all shadow-2xs"
           >
-            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-violet-100 text-violet-700 font-bold text-xs tracking-tight">
-              AH
+            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-[#2f6f52] font-bold text-xs tracking-tight">
+              🇲🇬
             </div>
             <div className="text-left hidden sm:block">
-              <div className="text-xs font-bold text-slate-800 leading-tight">Admin</div>
-              <div className="text-[10px] text-slate-400 font-medium leading-none">Opérations monde</div>
+              <div className="text-xs font-bold text-slate-800 leading-tight">Admin Transit</div>
+              <div className="text-[10px] text-emerald-700 font-semibold leading-none">Chine, Europe & USA ➔ Mada</div>
             </div>
           </button>
 
           {isProfileOpen && (
             <div className="absolute right-0 mt-2 w-52 py-1.5 bg-white rounded-xl shadow-lg border border-slate-100 z-50">
               <div className="px-3.5 py-2 border-b border-slate-100">
-                <p className="text-xs font-bold text-slate-800">Alexandre Henri</p>
-                <p className="text-[11px] text-slate-400">admin@logistics-intl.com</p>
+                <p className="text-xs font-bold text-slate-800">{adminProfile.name}</p>
+                <p className="text-[11px] text-slate-400">{adminProfile.email}</p>
               </div>
               <div className="py-1">
                 <button
-                  onClick={() => setIsProfileOpen(false)}
+                  onClick={() => {
+                    setIsProfileOpen(false);
+                    onNavigateToProfile();
+                  }}
                   className="w-full px-3.5 py-1.5 text-xs text-left text-slate-700 hover:bg-slate-50"
                 >
                   Mon profil
                 </button>
                 <button
-                  onClick={() => setIsProfileOpen(false)}
+                  onClick={() => {
+                    setIsProfileOpen(false);
+                    onNavigateToSecurity();
+                  }}
                   className="w-full px-3.5 py-1.5 text-xs text-left text-slate-700 hover:bg-slate-50"
                 >
                   Paramètres de sécurité
